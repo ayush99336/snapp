@@ -45,10 +45,14 @@ import { green } from "./helpers/colorize-log";
  * @returns {Promise<void>}
  */
 const deployScript = async (): Promise<void> => {
+    console.log("🔍 Debug info:");
+  console.log("Deployer address:", deployer.address);
+  console.log("Init value:", 15);
   await deployContract({
-    contract: "YourContract",
+    contract: "CounterContract",
     constructorArgs: {
-      owner: deployer.address,
+      init_value: 15,                   // whatever initial counter you want
+      owner: deployer.address,         // your account as owner
     },
   });
 };
