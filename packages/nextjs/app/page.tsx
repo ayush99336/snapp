@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ConnectedAddress } from "~~/components/ConnectedAddress";
+import { Counter } from "~~/components/Counter";
 
 const Home = () => {
   return (
@@ -12,15 +13,22 @@ const Home = () => {
         </h1>
         <ConnectedAddress />
         <p className="text-center text-lg">
-          Edit your smart contract{" "}
+          Interact with your smart contract{" "}
           <code className="bg-underline italic text-base font-bold max-w-full break-words break-all inline-block">
-            your_contract.cairo
+            CounterContract.cairo
           </code>{" "}
-          in{" "}
+          deployed on{" "}
           <code className="bg-underline italic text-base font-bold max-w-full break-words break-all inline-block">
-            packages/snfoundry/contracts/src
+            Sepolia Testnet
           </code>
         </p>
+      </div>
+
+      {/* Counter DApp Section */}
+      <div className="w-full mt-16 px-8 py-12">
+        <div className="flex justify-center">
+          <Counter />
+        </div>
       </div>
 
       <div className="bg-container grow w-full mt-16 px-8 py-12">
@@ -50,8 +58,11 @@ const Home = () => {
               height={32}
             ></Image>
             <p>
-              Play around with Multiwrite transactions using
-              useScaffoldMultiWrite() hook
+              Explore transactions with the{" "}
+              <Link href="/blockexplorer" passHref className="link">
+                Block Explorer
+              </Link>{" "}
+              tab.
             </p>
           </div>
         </div>

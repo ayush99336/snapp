@@ -54,6 +54,14 @@ const deployScript = async (): Promise<void> => {
       init_value: 15,                   // whatever initial counter you want
       owner: deployer.address,         // your account as owner
     },
+    options: {
+      tip: 10000000000000000n,  // 0.01 STRK tip for Sepolia
+      resourceBounds: {
+        l1_gas: { max_amount: 0x20000n, max_price_per_unit: 0x5af3107a4000n },
+        l2_gas: { max_amount: 0x0n, max_price_per_unit: 0x0n },
+        l1_data_gas: { max_amount: 0x20000n, max_price_per_unit: 0x5af3107a4000n }
+      }
+    }
   });
 };
 
